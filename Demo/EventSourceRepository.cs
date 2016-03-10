@@ -46,7 +46,7 @@ namespace Demo
                 throw new Exception("Could not store due to concurrency errors");
             }
             foreach (var evt in _stagedEvents) {
-                Console.WriteLine("Flushing " + evt.GetType().ToString());
+                Console.WriteLine("Flushing v{0} {1}", evt.Version, evt.GetType().ToString());
             }
             _db.Save(_stagedEvents.ToArray());
             _stagedEvents.ToList().ForEach(e => _bus.Publish(e));

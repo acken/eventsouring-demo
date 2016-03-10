@@ -18,7 +18,7 @@ namespace Demo
 
         public void PrintEvents() {
             for (var i = 0; i < _events.Count; i++) {
-                Console.WriteLine("{0} - {1} {2}", i, _events[i].AggregateId, _events[i].GetType().ToString());
+                Console.WriteLine("{0} - {1} v{2} {3}", i, _events[i].AggregateId, _events[i].Version, _events[i].GetType().ToString());
             }
         }
     }
